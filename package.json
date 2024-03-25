@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "npx hardhat run --network localhost scripts/deploy.js",
     "compile": "npx hardhat compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
     "@openzeppelin/hardhat-upgrades": "^3.0.5",
+    "ethers": "^6.11.1",
     "hardhat": "^2.22.2"
   },
   "dependencies": {
