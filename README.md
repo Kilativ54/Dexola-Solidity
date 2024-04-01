@@ -12,3 +12,8 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
 --- 0x5fbdb2315678afecb367f032d93f642f64180aa3 ---
+0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
+
+const Token = await ethers.getContractFactory('SolarGreen');
+
+ const token = await Token.attach('0x5FC8d32690cc91D4c39d9d3abcBD16989F875707')
