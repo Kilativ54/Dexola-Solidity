@@ -2,23 +2,17 @@
   "version": "3.4",
   "log": [
     {
-      "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:AccessControlUpgradeable": {
-        "src": "@openzeppelin\\contracts-upgradeable\\access\\AccessControlUpgradeable.sol:50",
+      "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:OwnableUpgradeable": {
+        "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:21",
         "inherit": [
-          "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:ERC165Upgradeable",
-          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
-          "@openzeppelin/contracts/access/IAccessControl.sol:IAccessControl",
           "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:ContextUpgradeable",
           "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:Initializable"
         ],
         "libraries": [],
         "methods": [
-          "supportsInterface(bytes4)",
-          "hasRole(bytes32,address)",
-          "getRoleAdmin(bytes32)",
-          "grantRole(bytes32,address)",
-          "revokeRole(bytes32,address)",
-          "renounceRole(bytes32,address)"
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
         ],
         "linkReferences": [],
         "errors": [],
@@ -33,31 +27,7 @@
               "label": "bool",
               "numberOfBytes": "1"
             },
-            "t_bytes32": {
-              "label": "bytes32",
-              "numberOfBytes": "32"
-            },
-            "t_mapping(t_address,t_bool)": {
-              "label": "mapping(address => bool)",
-              "numberOfBytes": "32"
-            },
-            "t_mapping(t_bytes32,t_struct(RoleData)25_storage)": {
-              "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)",
-              "numberOfBytes": "32"
-            },
-            "t_struct(AccessControlStorage)34_storage": {
-              "label": "struct AccessControlUpgradeable.AccessControlStorage",
-              "members": [
-                {
-                  "label": "_roles",
-                  "type": "t_mapping(t_bytes32,t_struct(RoleData)25_storage)",
-                  "offset": 0,
-                  "slot": "0"
-                }
-              ],
-              "numberOfBytes": "32"
-            },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -75,23 +45,17 @@
               ],
               "numberOfBytes": "32"
             },
-            "t_struct(RoleData)25_storage": {
-              "label": "struct AccessControlUpgradeable.RoleData",
+            "t_struct(OwnableStorage)14_storage": {
+              "label": "struct OwnableUpgradeable.OwnableStorage",
               "members": [
                 {
-                  "label": "hasRole",
-                  "type": "t_mapping(t_address,t_bool)",
+                  "label": "_owner",
+                  "type": "t_address",
                   "offset": 0,
                   "slot": "0"
-                },
-                {
-                  "label": "adminRole",
-                  "type": "t_bytes32",
-                  "offset": 0,
-                  "slot": "1"
                 }
               ],
-              "numberOfBytes": "64"
+              "numberOfBytes": "32"
             },
             "t_uint64": {
               "label": "uint64",
@@ -101,12 +65,12 @@
           "layoutVersion": "1.2",
           "flat": false,
           "namespaces": {
-            "erc7201:openzeppelin.storage.AccessControl": [
+            "erc7201:openzeppelin.storage.Ownable": [
               {
-                "contract": "AccessControlUpgradeable",
-                "label": "_roles",
-                "type": "t_mapping(t_bytes32,t_struct(RoleData)25_storage)",
-                "src": "@openzeppelin\\contracts-upgradeable\\access\\AccessControlUpgradeable.sol:61",
+                "contract": "OwnableUpgradeable",
+                "label": "_owner",
+                "type": "t_address",
+                "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
                 "offset": 0,
                 "slot": "0"
               }
@@ -147,7 +111,7 @@
               "label": "bool",
               "numberOfBytes": "1"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -241,7 +205,7 @@
               "label": "string",
               "numberOfBytes": "32"
             },
-            "t_struct(ERC20Storage)173_storage": {
+            "t_struct(ERC20Storage)144_storage": {
               "label": "struct ERC20Upgradeable.ERC20Storage",
               "members": [
                 {
@@ -277,7 +241,7 @@
               ],
               "numberOfBytes": "160"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -411,7 +375,7 @@
               "label": "string",
               "numberOfBytes": "32"
             },
-            "t_struct(ERC20Storage)173_storage": {
+            "t_struct(ERC20Storage)144_storage": {
               "label": "struct ERC20Upgradeable.ERC20Storage",
               "members": [
                 {
@@ -447,7 +411,7 @@
               ],
               "numberOfBytes": "160"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -579,7 +543,7 @@
               "label": "string",
               "numberOfBytes": "32"
             },
-            "t_struct(ERC20Storage)173_storage": {
+            "t_struct(ERC20Storage)144_storage": {
               "label": "struct ERC20Upgradeable.ERC20Storage",
               "members": [
                 {
@@ -615,7 +579,7 @@
               ],
               "numberOfBytes": "160"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -633,7 +597,7 @@
               ],
               "numberOfBytes": "32"
             },
-            "t_struct(PausableStorage)316_storage": {
+            "t_struct(PausableStorage)287_storage": {
               "label": "struct PausableUpgradeable.PausableStorage",
               "members": [
                 {
@@ -747,7 +711,7 @@
               "label": "bool",
               "numberOfBytes": "1"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -814,7 +778,7 @@
               "label": "bool",
               "numberOfBytes": "1"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -832,7 +796,7 @@
               ],
               "numberOfBytes": "32"
             },
-            "t_struct(PausableStorage)316_storage": {
+            "t_struct(PausableStorage)287_storage": {
               "label": "struct PausableUpgradeable.PausableStorage",
               "members": [
                 {
@@ -881,95 +845,6 @@
               }
             ]
           }
-        },
-        "solcVersion": "0.8.24"
-      },
-      "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:ERC165Upgradeable": {
-        "src": "@openzeppelin\\contracts-upgradeable\\utils\\introspection\\ERC165Upgradeable.sol:21",
-        "inherit": [
-          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
-          "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:Initializable"
-        ],
-        "libraries": [],
-        "methods": [
-          "supportsInterface(bytes4)"
-        ],
-        "linkReferences": [],
-        "errors": [],
-        "layout": {
-          "storage": [],
-          "types": {
-            "t_bool": {
-              "label": "bool",
-              "numberOfBytes": "1"
-            },
-            "t_struct(InitializableStorage)93_storage": {
-              "label": "struct Initializable.InitializableStorage",
-              "members": [
-                {
-                  "label": "_initialized",
-                  "type": "t_uint64",
-                  "offset": 0,
-                  "slot": "0"
-                },
-                {
-                  "label": "_initializing",
-                  "type": "t_bool",
-                  "offset": 8,
-                  "slot": "0"
-                }
-              ],
-              "numberOfBytes": "32"
-            },
-            "t_uint64": {
-              "label": "uint64",
-              "numberOfBytes": "8"
-            }
-          },
-          "layoutVersion": "1.2",
-          "flat": false,
-          "namespaces": {
-            "erc7201:openzeppelin.storage.Initializable": [
-              {
-                "contract": "Initializable",
-                "label": "_initialized",
-                "type": "t_uint64",
-                "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
-                "offset": 0,
-                "slot": "0"
-              },
-              {
-                "contract": "Initializable",
-                "label": "_initializing",
-                "type": "t_bool",
-                "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
-                "offset": 8,
-                "slot": "0"
-              }
-            ]
-          }
-        },
-        "solcVersion": "0.8.24"
-      },
-      "@openzeppelin/contracts/access/IAccessControl.sol:IAccessControl": {
-        "src": "@openzeppelin\\contracts\\access\\IAccessControl.sol:9",
-        "inherit": [],
-        "libraries": [],
-        "methods": [
-          "hasRole(bytes32,address)",
-          "getRoleAdmin(bytes32)",
-          "grantRole(bytes32,address)",
-          "revokeRole(bytes32,address)",
-          "renounceRole(bytes32,address)"
-        ],
-        "linkReferences": [],
-        "errors": [],
-        "layout": {
-          "storage": [],
-          "types": {},
-          "layoutVersion": "1.2",
-          "flat": false,
-          "namespaces": {}
         },
         "solcVersion": "0.8.24"
       },
@@ -1066,36 +941,15 @@
         },
         "solcVersion": "0.8.24"
       },
-      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
-        "src": "@openzeppelin\\contracts\\utils\\introspection\\IERC165.sol:15",
-        "inherit": [],
-        "libraries": [],
-        "methods": [
-          "supportsInterface(bytes4)"
-        ],
-        "linkReferences": [],
-        "errors": [],
-        "layout": {
-          "storage": [],
-          "types": {},
-          "layoutVersion": "1.2",
-          "flat": false,
-          "namespaces": {}
-        },
-        "solcVersion": "0.8.24"
-      },
       "contracts/SolarGreen.sol:SolarGreen": {
         "src": "contracts\\SolarGreen.sol:12",
         "version": {
-          "withMetadata": "bbc8289bc320cea4594c638c390c7cc3f0cfe1299fe9e395ec864dbde06f361d",
-          "withoutMetadata": "23449daa33a91e7dc932c42dcb0de94c4e53bb0855d76c9fdb9ccbac4b78ceb4",
-          "linkedWithoutMetadata": "23449daa33a91e7dc932c42dcb0de94c4e53bb0855d76c9fdb9ccbac4b78ceb4"
+          "withMetadata": "65a4cbc9cf522df7d8fd3a2a476b60a7a4b383326d649565b9e35bef8513f81f",
+          "withoutMetadata": "57aa03acfd294947cc62f18a8e9f7c1f0d3dbd2213d49820f683d1aa39ef63c8",
+          "linkedWithoutMetadata": "57aa03acfd294947cc62f18a8e9f7c1f0d3dbd2213d49820f683d1aa39ef63c8"
         },
         "inherit": [
-          "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:AccessControlUpgradeable",
-          "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:ERC165Upgradeable",
-          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
-          "@openzeppelin/contracts/access/IAccessControl.sol:IAccessControl",
+          "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:OwnableUpgradeable",
           "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20PausableUpgradeable.sol:ERC20PausableUpgradeable",
           "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol:PausableUpgradeable",
           "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol:ERC20BurnableUpgradeable",
@@ -1109,7 +963,7 @@
         "libraries": [],
         "methods": [
           "()",
-          "initialize(address,address,address)",
+          "initialize(address)",
           "pause()",
           "unpause()",
           "mint(address,uint256)"
@@ -1127,14 +981,6 @@
               "label": "bool",
               "numberOfBytes": "1"
             },
-            "t_bytes32": {
-              "label": "bytes32",
-              "numberOfBytes": "32"
-            },
-            "t_mapping(t_address,t_bool)": {
-              "label": "mapping(address => bool)",
-              "numberOfBytes": "32"
-            },
             "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
               "label": "mapping(address => mapping(address => uint256))",
               "numberOfBytes": "32"
@@ -1143,27 +989,11 @@
               "label": "mapping(address => uint256)",
               "numberOfBytes": "32"
             },
-            "t_mapping(t_bytes32,t_struct(RoleData)25_storage)": {
-              "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)",
-              "numberOfBytes": "32"
-            },
             "t_string_storage": {
               "label": "string",
               "numberOfBytes": "32"
             },
-            "t_struct(AccessControlStorage)34_storage": {
-              "label": "struct AccessControlUpgradeable.AccessControlStorage",
-              "members": [
-                {
-                  "label": "_roles",
-                  "type": "t_mapping(t_bytes32,t_struct(RoleData)25_storage)",
-                  "offset": 0,
-                  "slot": "0"
-                }
-              ],
-              "numberOfBytes": "32"
-            },
-            "t_struct(ERC20Storage)173_storage": {
+            "t_struct(ERC20Storage)144_storage": {
               "label": "struct ERC20Upgradeable.ERC20Storage",
               "members": [
                 {
@@ -1199,7 +1029,7 @@
               ],
               "numberOfBytes": "160"
             },
-            "t_struct(InitializableStorage)93_storage": {
+            "t_struct(InitializableStorage)64_storage": {
               "label": "struct Initializable.InitializableStorage",
               "members": [
                 {
@@ -1217,7 +1047,19 @@
               ],
               "numberOfBytes": "32"
             },
-            "t_struct(PausableStorage)316_storage": {
+            "t_struct(OwnableStorage)14_storage": {
+              "label": "struct OwnableUpgradeable.OwnableStorage",
+              "members": [
+                {
+                  "label": "_owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                }
+              ],
+              "numberOfBytes": "32"
+            },
+            "t_struct(PausableStorage)287_storage": {
               "label": "struct PausableUpgradeable.PausableStorage",
               "members": [
                 {
@@ -1228,24 +1070,6 @@
                 }
               ],
               "numberOfBytes": "32"
-            },
-            "t_struct(RoleData)25_storage": {
-              "label": "struct AccessControlUpgradeable.RoleData",
-              "members": [
-                {
-                  "label": "hasRole",
-                  "type": "t_mapping(t_address,t_bool)",
-                  "offset": 0,
-                  "slot": "0"
-                },
-                {
-                  "label": "adminRole",
-                  "type": "t_bytes32",
-                  "offset": 0,
-                  "slot": "1"
-                }
-              ],
-              "numberOfBytes": "64"
             },
             "t_uint256": {
               "label": "uint256",
@@ -1259,12 +1083,12 @@
           "layoutVersion": "1.2",
           "flat": false,
           "namespaces": {
-            "erc7201:openzeppelin.storage.AccessControl": [
+            "erc7201:openzeppelin.storage.Ownable": [
               {
-                "contract": "AccessControlUpgradeable",
-                "label": "_roles",
-                "type": "t_mapping(t_bytes32,t_struct(RoleData)25_storage)",
-                "src": "@openzeppelin\\contracts-upgradeable\\access\\AccessControlUpgradeable.sol:61",
+                "contract": "OwnableUpgradeable",
+                "label": "_owner",
+                "type": "t_address",
+                "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
                 "offset": 0,
                 "slot": "0"
               }

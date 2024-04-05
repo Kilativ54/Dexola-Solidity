@@ -16,4 +16,4 @@ npx hardhat ignition deploy ./ignition/modules/Lock.js
 
 const Token = await ethers.getContractFactory('SolarGreen');
 
- const token = await Token.attach('0x5FC8d32690cc91D4c39d9d3abcBD16989F875707')
+ const token = await Token.attach('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266')
