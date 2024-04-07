@@ -1087,9 +1087,9 @@
       "contracts/SolarGreen.sol:SolarGreen": {
         "src": "contracts\\SolarGreen.sol:12",
         "version": {
-          "withMetadata": "93111a5df6a6d60e72482499fba94b3a3013c195139b4b99d5bd2bd5a3b804e7",
-          "withoutMetadata": "2c0c6399c5eccee3038668fe7ae25cf2ce040926bf71be968de353ca41e47947",
-          "linkedWithoutMetadata": "2c0c6399c5eccee3038668fe7ae25cf2ce040926bf71be968de353ca41e47947"
+          "withMetadata": "776d8d79280194d2032cfa3392510e9aa53d86445a21ed1074fa408b9e082220",
+          "withoutMetadata": "5b951110ba4a30b156a9efd2b19ad90f732025d877a4b2008937973e578b26fa",
+          "linkedWithoutMetadata": "5b951110ba4a30b156a9efd2b19ad90f732025d877a4b2008937973e578b26fa"
         },
         "inherit": [
           "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol:AccessControlUpgradeable",
@@ -1117,7 +1117,16 @@
         "linkReferences": [],
         "errors": [],
         "layout": {
-          "storage": [],
+          "storage": [
+            {
+              "label": "_purchasedTokens",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "SolarGreen",
+              "src": "contracts\\SolarGreen.sol:18"
+            }
+          ],
           "types": {
             "t_address": {
               "label": "address",
@@ -1257,7 +1266,7 @@
             }
           },
           "layoutVersion": "1.2",
-          "flat": false,
+          "flat": true,
           "namespaces": {
             "erc7201:openzeppelin.storage.AccessControl": [
               {

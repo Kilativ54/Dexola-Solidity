@@ -13,6 +13,10 @@ contract SolarGreen is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
+    uint256 private constant _maxTokensPerWallet = 50000 * (10 ** 18); // Maximum tokens per wallet
+
+    mapping(address => uint256) private _purchasedTokens; // Map to store purchased tokens per wallet
+
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
@@ -28,7 +32,7 @@ contract SolarGreen is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable
 
         _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
         _grantRole(PAUSER_ROLE, pauser);
-        _mint(msg.sender, 10000000000 * 10 ** decimals());
+        _mint(msg.sender, 10000000000 * (10 ** decimals()));
         _grantRole(MINTER_ROLE, minter);
     }
 
@@ -41,6 +45,8 @@ contract SolarGreen is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable
     }
 
     function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
+        require(_purchasedTokens[to] + amount <= _maxTokensPerWallet, "Exceeds maximum tokens per wallet");
+        _purchasedTokens[to] += amount; // Update purchased tokens for the wallet
         _mint(to, amount);
     }
 
