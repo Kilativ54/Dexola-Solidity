@@ -13,9 +13,9 @@ contract SolarGreen is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
-    uint256 private constant _maxTokensPerWallet = 50000 * (10 ** 18); // Maximum tokens per wallet
+    uint256 private constant _maxTokensPerWallet = 50000 * (10 ** 18); 
 
-    mapping(address => uint256) private _purchasedTokens; // Map to store purchased tokens per wallet
+    mapping(address => uint256) private _purchasedTokens; 
 
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
@@ -46,11 +46,11 @@ contract SolarGreen is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable
 
     function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
         require(_purchasedTokens[to] + amount <= _maxTokensPerWallet, "Exceeds maximum tokens per wallet");
-        _purchasedTokens[to] += amount; // Update purchased tokens for the wallet
+        _purchasedTokens[to] += amount; 
         _mint(to, amount);
     }
 
-    // The following functions are overrides required by Solidity.
+   
 
     function _update(address from, address to, uint256 value)
         internal
