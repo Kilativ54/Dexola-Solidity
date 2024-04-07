@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "getIndex": "npx hardhat run --network localhost ./scripts/index.js",
+    "sendToken": "npx hardhat run scripts/index.js --network sepoila",
     "contracts": "npx hardhat node",
     "console": " npx hardhat console --network localhost",
-    "deploy": "npx hardhat run --network localhost scripts/deploy.js",
+    "deploy": " npx hardhat run scripts/deploy.js --network sepoila",
+    "deployLocal": "npx hardhat run --network localhost scripts/deployLocal.js",
     "compile": "npx hardhat compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2",
-    "@openzeppelin/contracts-upgradeable": "^5.0.2"
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "dotenv": "^16.4.5"
   }
 }

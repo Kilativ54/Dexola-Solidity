@@ -3,11 +3,13 @@ const { ethers } = require("hardhat");
 async function main () {
  const Token = await ethers.getContractFactory('SolarGreen');
 
- const token = await Token.attach('0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512')
+ const token = await Token.attach('0xD3C1228716009D29b8930eaBd014D0272c210692')
  
- await token.mint('0x70997970C51812dc3A010C7d01b50e0d17dc79C8', ethers.parseEther("7000"));
- const balance = await token.balanceOf('0x70997970C51812dc3A010C7d01b50e0d17dc79C8');
+ await token.mint('0xD3C1228716009D29b8930eaBd014D0272c210692', ethers.parseEther("2"));
+ const balance = await token.balanceOf('0xD3C1228716009D29b8930eaBd014D0272c210692');
  console.log(balance.toString());
+ console.log('SolarGreen deployed to:', token.target );
+ console.log('Account:', token.runner. address);
 }
 
 main()
